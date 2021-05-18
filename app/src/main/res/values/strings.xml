@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">TabeManeCorp</string>
+    //企業用リアルタイムセールに追加する部分
+    <string-array name="Spinner_items">
+        <item>-選択-</item>
+        <item>5%</item>
+        <item>10%</item>
+        <item>15%</item>
+        <item>20%</item>
+        <item>30%</item>
+    </string-array>
+
+    //企業用クーポン配布のために追加する部分
+    <string-array name="Spinner_items2">
+        <item>-選択-</item>
+        <item>100円引き</item>
+        <item>200円引き</item>
+        <item>10%OFF</item>
+        <item>15%OFF</item>
+        <item>20%OFF</item>
+    </string-array>
+
+    <string-array name="Spinner_items3">
+        <item>-選択-</item>
+        <item>男性</item>
+        <item>女性</item>
+        <item>区別なし</item>
+    </string-array>
+
+    <string-array name="Spinner_items4">
+        <item>-選択-</item>
+        <item>10代</item>
+        <item>20代</item>
+        <item>30~40代</item>
+        <item>50~60代</item>
+        <item>70代~</item>
+        <item>区別なし</item>
+    </string-array>
+
+    <string-array name="Spinner_items5">
+        <item>-選択-</item>
+        <item>会社員</item>
+        <item>公務員</item>
+        <item>学生</item>
+        <item>専業主婦(夫)</item>
+        <item>区別なし</item>
+    </string-array>
+
+</resources>

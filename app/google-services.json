@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "905314071078",
+    "project_id": "tabemanecorp",
+    "storage_bucket": "tabemanecorp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:905314071078:android:838e26d1b72d29e3322ce7",
+        "android_client_info": {
+          "package_name": "com.example.tabemanecorp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "905314071078-rcn7qt668fb2iikh8ds0fs6cv1loj3o4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVyvGeE1Pnls62VWJ4ndTsBUseO29WNpg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "905314071078-rcn7qt668fb2iikh8ds0fs6cv1loj3o4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
