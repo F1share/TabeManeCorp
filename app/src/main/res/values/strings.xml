@@ -11,6 +11,14 @@
     </string-array>
 
     //企業用クーポン配布のために追加する部分
+    <string-array name="Spinner_items1">
+        <item>-選択-</item>
+        <item>野菜</item>
+        <item>肉類</item>
+        <item>魚介類</item>
+        <item>スイーツ</item>
+    </string-array>
+
     <string-array name="Spinner_items2">
         <item>-選択-</item>
         <item>100円引き</item>
