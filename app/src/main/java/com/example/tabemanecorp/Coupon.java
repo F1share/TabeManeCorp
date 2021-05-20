@@ -74,19 +74,20 @@ public class Coupon extends AppCompatActivity {
                                     // ********************************************
                                     // データ送信　＆　登録
                                     // ********************************************
-                                    food_id = food_id + 1 ;
-                                    String id_text = String.valueOf(food_id) ;
-                                    DatabaseReference reference = FirebaseDatabase.getInstance().getReference(id_text);
+                                    //food_id = food_id + 1 ;
+                                    //String id_text = String.valueOf(food_id) ;
+                                    DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
+                                    reference = reference.child("クーポン").push();
                                     reference.child("rate").setValue(rate,null);
                                     reference.child("食品の種類").setValue(kind, null) ;
                                     reference.child("性別").setValue(gender, null) ;
                                     reference.child("年代").setValue(age, null) ;
                                     reference.child("職業").setValue(occupation, null) ;
-                                    try {
-                                        Thread.sleep(5000);
-                                    } catch(InterruptedException e) {
-                                        System.out.println("got interrupted!");
-                                    }
+//                                    try {
+//                                        Thread.sleep(5000);
+//                                    } catch(InterruptedException e) {
+//                                        System.out.println("got interrupted!");
+//                                    }
                                     Intent intent = new Intent(Coupon.this, Coupon2.class);
 
 //                                    // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
