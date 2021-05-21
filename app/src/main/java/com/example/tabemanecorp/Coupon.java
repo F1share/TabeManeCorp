@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -17,20 +18,25 @@ public class Coupon extends AppCompatActivity {
 
     // Setting
     String rate = null ;
+    String rate_num = null ;
     String kind = null ;
     String gender = null ;
     String age = null ;
     String occupation = null ;
+    String date = null ;
     String amessage = null ;
     String bmessage = null ;
     String cmessage = null ;
     String dmessage = null ;
     String emessage = null ;
+    String fmessage = null ;
     int num_tva = 2 ;
     int num_tvb = 2 ;
     int num_tvc = 2 ;
     int num_tvd = 2 ;
     int num_tve = 2 ;
+    int state = 2 ;
+    int stringLength = 100 ;
     int food_id = 10004 ;
 
     // On Create
@@ -59,36 +65,61 @@ public class Coupon extends AppCompatActivity {
                 TextView tvc = findViewById(R.id.ctv);
                 TextView tvd = findViewById(R.id.dtv);
                 TextView tve = findViewById(R.id.etv);
-//                TextView tv_upper = findViewById(R.id.tv_upper);
+                //                TextView tv_upper = findViewById(R.id.tv_upper);
                 tva.setText(amessage);
                 tvb.setText(bmessage);
                 tvc.setText(cmessage);
                 tvd.setText(dmessage);
                 tve.setText(emessage);
+                // Date Text
+                EditText editText = findViewById(R.id.editTextDate) ;
+                final String text = editText.getText().toString();
+                stringLength = text.length() ;
+                if (stringLength < 4) {
+                    state = 1 ;
+                } else {
+                    state = 2 ;
+                }
+                TextView tvf = findViewById(R.id.ftv);
+                switch (state) {
+                    case 1 :
+                        fmessage = "日付を入力してください。" ;
+                        tvf.setText(fmessage);
+                        break ;
+                    case 2 :
+                        fmessage = " " ;
+                        tvf.setText(fmessage);
+                        break ;
+                }
                 if (num_tva == 2) {
                     if (num_tvb == 2) {
                         if (num_tvc == 2) {
                             if (num_tvd == 2) {
                                 if (num_tve == 2) {
+                                    if (state == 2) {
 
-                                    // ********************************************
-                                    // データ送信　＆　登録
-                                    // ********************************************
-                                    //food_id = food_id + 1 ;
-                                    //String id_text = String.valueOf(food_id) ;
-                                    DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
-                                    reference = reference.child("クーポン").push();
-                                    reference.child("rate").setValue(rate,null);
-                                    reference.child("食品の種類").setValue(kind, null) ;
-                                    reference.child("性別").setValue(gender, null) ;
-                                    reference.child("年代").setValue(age, null) ;
-                                    reference.child("職業").setValue(occupation, null) ;
+                                        // ********************************************
+                                        // データ送信　＆　登録
+                                        // ********************************************
+                                        //food_id = food_id + 1 ;
+                                        //String id_text = String.valueOf(food_id) ;
+                                        DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
+                                        reference = reference.child("クーポン").push();
+                                        reference.child("rate").setValue(rate_num,null);
+                                        reference.child("food").setValue(kind, null) ;
+                                        String name = kind + rate + "クーポン" ;
+                                        reference.child("name").setValue(name, null);
+                                        reference.child("date").setValue(text, null) ;
+
+//                                    reference.child("性別").setValue(gender, null) ;
+//                                    reference.child("年代").setValue(age, null) ;
+//                                    reference.child("職業").setValue(occupation, null) ;
 //                                    try {
 //                                        Thread.sleep(5000);
 //                                    } catch(InterruptedException e) {
 //                                        System.out.println("got interrupted!");
 //                                    }
-                                    Intent intent = new Intent(Coupon.this, Coupon2.class);
+                                        Intent intent = new Intent(Coupon.this, Coupon2.class);
 
 //                                    // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //                                    Intent subIntent = new Intent(getApplicationContext(), Coupon3.class) ;
@@ -101,8 +132,9 @@ public class Coupon extends AppCompatActivity {
 //                                    subIntent.putExtra("age", food_id);
 //                                    subIntent.putExtra("occupation", food_id);
 
-                                    startActivity(intent);
+                                        startActivity(intent);
 
+                                    }
                                 }
                             }
                         }
@@ -119,6 +151,12 @@ public class Coupon extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String selectedItem = parent.getItemAtPosition(position).toString();
                 switch (selectedItem){
+                    case "全品" :
+                        Log.d(selectedItem,"全品");
+                        kind = "全品" ;
+                        amessage = " " ;
+                        num_tva = 2 ;
+                        break ;
                     case "野菜" :
                         Log.d(selectedItem,"野菜");
                         kind = "野菜" ;
@@ -167,31 +205,36 @@ public class Coupon extends AppCompatActivity {
                 switch (selectedItem){
                     case "100円引き" :
                         Log.d(selectedItem,"100円");
-                        rate = "100円（料金割引）" ;
+                        rate = "100円引き" ;
+                        rate_num = "100" ;
                         bmessage = " " ;
                         num_tvb = 2 ;
                         break;
                     case "200円引き" :
                         Log.d(selectedItem,"200円");
-                        rate = "200円（料金割引）" ;
+                        rate = "200円引き" ;
+                        rate_num = "200" ;
                         bmessage = " " ;
                         num_tvb = 2 ;
                         break;
                     case "10%OFF" :
                         Log.d(selectedItem,"10%OFF");
-                        rate = "10％（割合割引）" ;
+                        rate = "10％割り引き" ;
+                        rate_num = "0.1" ;
                         bmessage = " " ;
                         num_tvb = 2 ;
                         break;
                     case "15%OFF" :
                         Log.d(selectedItem,"15%OFF");
-                        rate = "15％（割合割引）" ;
+                        rate = "15％割り引き" ;
+                        rate_num = "0.15" ;
                         bmessage = " " ;
                         num_tvb = 2 ;
                         break;
                     case "20%OFF" :
                         Log.d(selectedItem,"20%OFF");
-                        rate = "20％割引" ;
+                        rate = "20％割り引き" ;
+                        rate_num = "0.2" ;
                         bmessage = " " ;
                         num_tvb = 2 ;
                         break;
@@ -354,6 +397,4 @@ public class Coupon extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
-
-    }
 }
