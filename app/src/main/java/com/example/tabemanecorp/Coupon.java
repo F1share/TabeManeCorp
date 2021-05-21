@@ -397,4 +397,14 @@ public class Coupon extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
+
+//        EditText et0 = findViewById(R.id.editTextDate) ;
+//        et0.setOnKeyListener(new View.OnKeyListener() {
+//            @Override
+//            public boolean onKey(View v, int keyCode, KeyEvent event) {
+//                return false;
+//            }
+//        });
+
+    }
 }
