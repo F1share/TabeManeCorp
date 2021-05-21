@@ -233,6 +233,19 @@
         app:layout_constraintTop_toBottomOf="@+id/eSpinner" />
 
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="クーポン終了日"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.224"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.76" />
+
+
     <EditText
         android:id="@+id/editTextDate"
         android:layout_width="wrap_content"
@@ -252,7 +265,7 @@
         android:id="@+id/ftv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="2dp"
         android:layout_marginEnd="120dp"
         android:layout_marginRight="120dp"
         android:text=" "

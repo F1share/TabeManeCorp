@@ -13,13 +13,13 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        findViewById(R.id.btnFrame).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Home.this,Frame.class);
-                startActivity(intent);
-            }
-        });
+//        findViewById(R.id.btnFrame).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(Home.this,Frame.class);
+//                startActivity(intent);
+//            }
+//        });
 
         findViewById(R.id.btncoupon).setOnClickListener(new View.OnClickListener() {
             @Override

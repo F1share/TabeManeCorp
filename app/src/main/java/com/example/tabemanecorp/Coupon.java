@@ -16,14 +16,15 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class Coupon extends AppCompatActivity {
 
+    // ++++++++++++++++++++++++++++++++++++++++++
     // Setting
+    private static  final int REQUEST_CODE = 1;
     String rate = null ;
     String rate_num = null ;
     String kind = null ;
     String gender = null ;
     String age = null ;
     String occupation = null ;
-    String date = null ;
     String amessage = null ;
     String bmessage = null ;
     String cmessage = null ;
@@ -37,7 +38,7 @@ public class Coupon extends AppCompatActivity {
     int num_tve = 2 ;
     int state = 2 ;
     int stringLength = 100 ;
-    int food_id = 10004 ;
+    // ++++++++++++++++++++++++++++++++++++++++++
 
     // On Create
     @Override
@@ -53,10 +54,9 @@ public class Coupon extends AppCompatActivity {
             }
         });
 
-
-        //******************************************************************************
-        // Connection between Spinner & Firebase DB
-        //* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+        // ++++++++++++++++++++++++++++++++++++++++++
+        // 登録ボタンを押したとき
+        // ++++++++++++++++++++++++++++++++++++++++++
         findViewById(R.id.completed_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,7 +65,6 @@ public class Coupon extends AppCompatActivity {
                 TextView tvc = findViewById(R.id.ctv);
                 TextView tvd = findViewById(R.id.dtv);
                 TextView tve = findViewById(R.id.etv);
-                //                TextView tv_upper = findViewById(R.id.tv_upper);
                 tva.setText(amessage);
                 tvb.setText(bmessage);
                 tvc.setText(cmessage);
@@ -101,8 +100,6 @@ public class Coupon extends AppCompatActivity {
                                         // ********************************************
                                         // データ送信　＆　登録
                                         // ********************************************
-                                        //food_id = food_id + 1 ;
-                                        //String id_text = String.valueOf(food_id) ;
                                         DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
                                         reference = reference.child("クーポン").push();
                                         reference.child("rate").setValue(rate_num,null);
@@ -111,28 +108,15 @@ public class Coupon extends AppCompatActivity {
                                         reference.child("name").setValue(name, null);
                                         reference.child("date").setValue(text, null) ;
 
-//                                    reference.child("性別").setValue(gender, null) ;
-//                                    reference.child("年代").setValue(age, null) ;
-//                                    reference.child("職業").setValue(occupation, null) ;
-//                                    try {
-//                                        Thread.sleep(5000);
-//                                    } catch(InterruptedException e) {
-//                                        System.out.println("got interrupted!");
-//                                    }
-                                        Intent intent = new Intent(Coupon.this, Coupon2.class);
-
-//                                    // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-//                                    Intent subIntent = new Intent(getApplicationContext(), Coupon3.class) ;
-//                                    subIntent.putExtra("food_id", food_id);
-//                                    // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-//                                    subIntent.putExtra("type", food_id);
-//                                    subIntent.putExtra("rate", food_id);
-//                                    subIntent.putExtra("gender", food_id);
-//                                    subIntent.putExtra("age", food_id);
-//                                    subIntent.putExtra("occupation", food_id);
-
-                                        startActivity(intent);
+                                        Intent intent2 = new Intent(Coupon.this, Coupon2.class);
+                                        intent2.putExtra("Name", name);
+                                        intent2.putExtra("Food", kind);
+                                        intent2.putExtra("Type", rate);
+                                        intent2.putExtra("Gender", gender);
+                                        intent2.putExtra("Age", age);
+                                        intent2.putExtra("Occupation", occupation);
+                                        intent2.putExtra("Date", text);
+                                        startActivityForResult(intent2, REQUEST_CODE);
 
                                     }
                                 }
@@ -194,8 +178,6 @@ public class Coupon extends AppCompatActivity {
             }
         });
 
-
-
         // Spinner : 割引のオプション
         Spinner bspinner = findViewById(R.id.bSpinner);
         bspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -251,7 +233,6 @@ public class Coupon extends AppCompatActivity {
             }
         });
 
-
         // Spinner : 性別
         Spinner cspinner = findViewById(R.id.cSpinner);
         cspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -289,7 +270,6 @@ public class Coupon extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
-
 
         // Spinner : 年代
         Spinner dspinner = findViewById(R.id.dSpinner);
@@ -347,7 +327,6 @@ public class Coupon extends AppCompatActivity {
             }
         });
 
-
         // Spinner : 職業
         Spinner espinner = findViewById(R.id.eSpinner);
         espinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -389,7 +368,7 @@ public class Coupon extends AppCompatActivity {
                         Log.d(selectedItem,"失敗");
                         emessage = "選択してください。" ;
                         occupation = selectedItem ;
-                        num_tvd = 1 ;
+                        num_tve = 1 ;
                         break;
                 }
             }
@@ -397,14 +376,5 @@ public class Coupon extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
-
-//        EditText et0 = findViewById(R.id.editTextDate) ;
-//        et0.setOnKeyListener(new View.OnKeyListener() {
-//            @Override
-//            public boolean onKey(View v, int keyCode, KeyEvent event) {
-//                return false;
-//            }
-//        });
-
     }
 }
