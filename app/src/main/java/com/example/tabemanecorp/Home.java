@@ -52,5 +52,13 @@ public class Home extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        findViewById(R.id.logout).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Home.this,MainActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
