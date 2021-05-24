@@ -79,11 +79,11 @@
 
     <TextView
         android:id="@+id/tvName"
-        android:layout_width="279dp"
+        android:layout_width="290dp"
         android:layout_height="41dp"
+        android:gravity="center_horizontal"
         android:text=" "
         android:textSize="22dp"
-        android:gravity="center_horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintLeft_toLeftOf="parent"
