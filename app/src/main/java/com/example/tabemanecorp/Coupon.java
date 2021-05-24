@@ -49,7 +49,7 @@ public class Coupon extends AppCompatActivity {
         findViewById(R.id.btnhome).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Coupon.this, MainActivity.class);
+                Intent intent = new Intent(Coupon.this, Home.class);
                 startActivity(intent);
             }
         });
