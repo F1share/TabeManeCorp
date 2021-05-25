@@ -18,7 +18,6 @@
         <activity android:name=".Coupon" />
         <activity android:name=".Frame" />
         <activity android:name=".Home" />
-        <activity android:name=".Register" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
