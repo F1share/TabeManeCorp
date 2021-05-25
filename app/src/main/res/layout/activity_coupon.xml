@@ -169,7 +169,7 @@
 
 
     <TextView
-        android:id="@+id/atv"
+        android:id="@+id/tv0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -182,7 +182,7 @@
 
 
     <TextView
-        android:id="@+id/btv"
+        android:id="@+id/tv1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -195,7 +195,7 @@
 
 
     <TextView
-        android:id="@+id/ctv"
+        android:id="@+id/tv2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -208,7 +208,7 @@
 
 
     <TextView
-        android:id="@+id/dtv"
+        android:id="@+id/tv3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -221,7 +221,7 @@
 
 
     <TextView
-        android:id="@+id/etv"
+        android:id="@+id/tv4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -262,7 +262,7 @@
 
 
     <TextView
-        android:id="@+id/ftv"
+        android:id="@+id/tv5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
