@@ -21,6 +21,7 @@ public class Home extends AppCompatActivity {
 //            }
 //        });
 
+        // クーポンボタンを押したとき
         findViewById(R.id.btncoupon).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -29,6 +30,7 @@ public class Home extends AppCompatActivity {
             }
         });
 
+        // リアルタイムセールを押したとき
         findViewById(R.id.btnsale).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -37,6 +39,7 @@ public class Home extends AppCompatActivity {
             }
         });
 
+        // 広告設計ボタンを押したとき
         findViewById(R.id.btnadv).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,6 +48,7 @@ public class Home extends AppCompatActivity {
             }
         });
 
+        // アンケート設定ボタンを押したとき
         findViewById(R.id.btnquest).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,6 +57,7 @@ public class Home extends AppCompatActivity {
             }
         });
 
+        // ログアウトボタンを押したとき
         findViewById(R.id.logout).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -41,6 +41,7 @@ public class RealTimeSale extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_real_time_sale);
 
+        // ホームボタンを押したとき
         findViewById(R.id.btnhome).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

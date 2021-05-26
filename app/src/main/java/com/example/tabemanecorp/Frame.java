@@ -29,6 +29,7 @@ public class Frame extends AppCompatActivity {
 //            }
 //        });
 
+        // ホームボタンを押したとき
         findViewById(R.id.btnhome).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

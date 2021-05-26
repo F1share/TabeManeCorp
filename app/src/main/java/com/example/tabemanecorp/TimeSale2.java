@@ -22,6 +22,7 @@ public class TimeSale2 extends AppCompatActivity implements AdapterView.OnItemSe
         Spinner aSpinner = findViewById(R.id.aSpinner);
         aSpinner.setOnItemSelectedListener(this);
 
+        // ホームボタンを押したとき
         findViewById(R.id.btnhome).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

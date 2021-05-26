@@ -13,6 +13,7 @@ public class Questionnaire extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questionnaire);
 
+        // ホームボタンを押したとき
         findViewById(R.id.btnhome).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

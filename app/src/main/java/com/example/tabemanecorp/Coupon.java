@@ -22,6 +22,7 @@ public class Coupon extends AppCompatActivity {
     // Setting
     private static  final int REQUEST_CODE = 1;
     String rate = null ;
+    
     String rate_num = null ;
     String kind = null ;
     String gender = null ;
